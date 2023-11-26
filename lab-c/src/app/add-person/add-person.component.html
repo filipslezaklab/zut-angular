@@ -1,0 +1,19 @@
+<form id="add-person-form" (submit)="save($event)">
+  <div class="info">
+    <label for="firstName">First Name</label>
+    <input id="firstName" type="text" name="firstName" [(ngModel)]="formFields.firstName" />
+    <label for="lastName">Last Name</label>
+    <input id="lastName" type="text" name="lastName" [(ngModel)]="formFields.lastName" />
+    <label for="age">Age</label>
+    <input id="age" name="age" type="text" inputmode="numeric" [(ngModel)]="formFields.age" />
+  </div>
+  <div class="address">
+    <label for="city">City</label>
+    <input id="city" name="city" type="text" [(ngModel)]="formFields.address.city" />
+    <label for="street">Street</label>
+    <input id="street" type="text" name="street" [(ngModel)]="formFields.address.street" />
+    <label for="postcode">Postcode</label>
+    <input id="postcode" name="postcode" [(ngModel)]="formFields.address.postCode" />
+  </div>
+  <button type="submit">Save</button>
+</form>
