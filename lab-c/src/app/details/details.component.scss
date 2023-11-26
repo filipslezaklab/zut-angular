@@ -1,0 +1,58 @@
+.person-details {
+  a {
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  dt,
+  dd,
+  dl,
+  h2,
+  span,
+  p,
+  div {
+    margin: 0;
+    padding: 0;
+  }
+
+  .person {
+    display: flex;
+    flex-flow: column;
+    row-gap: 25px;
+    box-sizing: border-box;
+    padding: 10px 0;
+    border: 1px solid #000;
+    max-width: 250px;
+    background-color: white;
+
+    h2 {
+      box-sizing: border-box;
+      padding-left: 10px;
+    }
+
+    dl {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      row-gap: 5px;
+      column-gap: 10px;
+    }
+
+    dd {
+      text-align: left;
+    }
+
+    .info {
+      max-width: 50%;
+    }
+
+    .address {
+      background-color: rgb(206, 201, 201);
+    }
+    dl,
+    h2 {
+      box-sizing: border-box;
+      padding-left: 10px;
+    }
+  }
+}

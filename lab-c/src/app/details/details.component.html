@@ -1,0 +1,22 @@
+<div class="person-details">
+  <a [routerLink]="['/']">Back</a>
+
+  <div class="person" *ngIf="person">
+    <h2>{{person.firstName}} {{person.lastName}}</h2>
+    <dl class="info">
+      <dt>ID:</dt>
+      <dd>{{paramId}}</dd>
+
+      <dt>Age:</dt>
+      <dd>{{person.age}}</dd>
+    </dl>
+    <dl class="address">
+      <dt>City:</dt>
+      <dd>{{ person.address.city }}</dd>
+      <dt>Street:</dt>
+      <dd>{{ person.address.street }}</dd>
+      <dt>Postcode:</dt>
+      <dd>{{ person.address.postCode }}</dd>
+    </dl>
+  </div>
+</div>
