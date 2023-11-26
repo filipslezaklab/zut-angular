@@ -1,0 +1,58 @@
+:host {
+  margin: 10px 0;
+  display: block;
+}
+.random {
+  display: flex;
+  width: max-content;
+  min-width: 300px;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  row-gap: 15px;
+  box-sizing: border-box;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 0;
+
+  p,
+  span {
+    text-align: left;
+  }
+
+  p,
+  span,
+  div {
+    margin: 0;
+    padding: 0;
+  }
+
+  .bottom {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 10px;
+
+    .value {
+      min-width: 30px;
+      text-align: center;
+    }
+
+    button {
+      min-width: 30px;
+      text-align: center;
+    }
+
+    .gen-info {
+      display: flex;
+      flex-flow: row nowrap;
+      .above {
+        color: red;
+      }
+      .below {
+        color: green;
+      }
+    }
+  }
+}

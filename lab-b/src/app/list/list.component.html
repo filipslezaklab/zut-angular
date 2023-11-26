@@ -1,0 +1,5 @@
+<input placeholder="text" [(ngModel)]="inputValue" />
+<button (click)="addElement()">Add</button>
+<ul>
+  <li *ngFor="let item of elements; index as i">{{item}} <a (click)="handleDelete($event, i)">usuń</a></li>
+</ul>

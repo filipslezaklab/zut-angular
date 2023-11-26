@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+
+ul {
+  li {
+    a {
+      user-select: none;
+      cursor: pointer;
+      color: red;
+    }
+  }
+}

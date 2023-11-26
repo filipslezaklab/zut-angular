@@ -1,0 +1,11 @@
+<div class="random">
+  <p>Random component (max = {{max}})</p>
+  <div class="bottom">
+    <p class="value">{{generated ?? ''}}</p>
+    <button (click)="randomize($event)">Losuj</button>
+    <div *ngIf="generated" class="gen-info">
+      <p class="above" *ngIf="generated >= max * 0.5">górna połowa wartości</p>
+      <p class="below" *ngIf="generated < max * 0.5">dolna połowa wartość</p>
+    </div>
+  </div>
+</div>
