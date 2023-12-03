@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let task of tasks">
+    <div class="task">
+      <p>Id: {{task.id}}</p>
+      <p>Title: {{task.title}}</p>
+      <p>Completed: {{task.completed ? 'true' : 'false'}}</p>
+      <p>Archived: {{task.archived}}</p>
+    </div>
+  </li>
+</ul>

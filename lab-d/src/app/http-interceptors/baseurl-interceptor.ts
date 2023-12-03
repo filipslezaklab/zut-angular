@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 export class BaseInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler):
     Observable<HttpEvent<any>> {
-      const targetURL = 'https://localhost:37611/todos/' + req.url;
+      const targetURL = 'http://localhost:37611/todos/' + req.url;
       const newReq = req.clone({url: targetURL});
     return next.handle(newReq);
   }
