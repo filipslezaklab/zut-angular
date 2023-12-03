@@ -1,3 +1,39 @@
 :host {
   display: block;
 }
+
+ul {
+  display: flex;
+  flex-flow: column;
+  list-style: none;
+  row-gap: 15px;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.task {
+  height: 50px;
+  background-color: white;
+  box-sizing: border-box;
+  border: 1px solid black;
+  padding: 5px 10px;
+  margin: 0 15px;
+  width: calc(100% - 30px);
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+
+  .title {
+    justify-self: start;
+  }
+
+  input {
+    justify-self: end;
+  }
+}

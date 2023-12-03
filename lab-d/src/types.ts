@@ -1,9 +1,9 @@
 export type Task = {
   id: number;
   title: string;
-  deadline: Date;
   completed: boolean;
   archived: boolean;
+  deadline?: Date;
 }
 
 export enum ApiSort {
@@ -13,4 +13,7 @@ export enum ApiSort {
 
 export type CreateTaskRequest = Omit<Task, 'id'>;
 
-export type PatchTaskRequest = Partial<Task>;
+export type PatchTaskRequest = {
+  id: number;
+  task: Partial<Omit<Task, 'id'>>;
+};
