@@ -1,6 +1,14 @@
+:host {
+  display: block;
+  box-sizing: border-box;
+  padding-bottom: 40px;
+}
+
 header {
   display: flex;
-  flex-flow: column;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
   padding: 20px 10px;
   border: 0 solid transparent;
   border-radius: 0;
@@ -8,6 +16,30 @@ header {
   color: #cad0ef;
   background-color: #323b86;
   margin-bottom: 40px;
+
+  nav {
+    margin-left: auto;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-flow: row wrap;
+      column-gap: 20px;
+
+      a {
+        font-size: 16px;
+        color: white;
+        text-decoration: none;
+
+        &.active {
+          text-decoration: underline;
+          text-underline-offset: 2px;
+        }
+      }
+    }
+  }
 }
 
 footer {

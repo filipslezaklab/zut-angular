@@ -7,22 +7,18 @@ import { CreateTaskRequest, PatchTaskRequest, Task } from '../types';
   providedIn: 'root',
 })
 export class TaskService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   public index(archived = false): Observable<Task[]> {
     const params: any = {};
-    if(archived) {
-      params.archived = true;
-    }
+    params.archived = archived;
     return this.http.get<Task[]>('', {
       params
     });
   }
 
   public post(data: CreateTaskRequest): Observable<Task> {
-    return this.http.post<Task>('', {
-      data,
-    });
+    return this.http.post<Task>('', data);
   }
 
   public put(data: Task): Observable<Task> {

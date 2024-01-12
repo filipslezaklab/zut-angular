@@ -1,0 +1,10 @@
+<p>Archive</p>
+<ul id="tasks-archive">
+  <li *ngFor="let task of tasks">
+    <div class="task">
+      <p class="title">Title: {{ task.title }}</p>
+      <p class="date" *ngIf="task.deadline">{{ task.deadline | date:'YYYY-MM-dd' }}</p>
+      <button (click)="delete(task, $event)" [disabled]="loading">Delete</button>
+    </div>
+  </li>
+</ul>
