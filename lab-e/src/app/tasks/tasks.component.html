@@ -1,0 +1,27 @@
+<div class="top">
+  <form id="new-task" [formGroup]="newTaskForm" (ngSubmit)="handleNewTaskSubmit()">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput id="title" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Deadline</mat-label>
+      <input matInput [matDatepicker]="picker" id="deadline" />
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="loading">{{ loading ? 'Processing...' : 'Add
+      Task'}}</button>
+  </form>
+  <button mat-raised-button color="accent" type="button" [disabled]="loading" (click)="archive()">Archive
+    completed</button>
+</div>
+<ul id="tasks-list">
+  <li *ngFor="let task of tasks">
+    <mat-card class="task" (click)="complete(task)">
+      <p class="title">Title: {{ task.title }}</p>
+      <p class="date" *ngIf="task.deadline">{{ task.deadline | date:'YYYY-MM-dd' }}</p>
+      <mat-checkbox [checked]="task.completed" (change)="complete(task)"></mat-checkbox>
+    </mat-card>
+  </li>
+</ul>

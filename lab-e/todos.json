@@ -1,0 +1,25 @@
+{
+  "todos": [
+    {
+      "title": "Starter 01",
+      "deadline": "2024-01-14",
+      "archived": false,
+      "completed": false,
+      "id": 1
+    },
+    {
+      "title": "Starter 02",
+      "deadline": "2024-01-14",
+      "archived": false,
+      "completed": false,
+      "id": 2
+    },
+    {
+      "title": "Starter archive",
+      "deadline": "2024-01-15",
+      "archived": true,
+      "completed": true,
+      "id": 3
+    }
+  ]
+}

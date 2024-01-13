@@ -1,0 +1,134 @@
+:host {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+  row-gap: 25px;
+  box-sizing: border-box;
+  padding: 10px 30px;
+}
+
+
+.top {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+  row-gap: 25px;
+  width: 100%;
+}
+
+#new-task {
+  display: grid;
+  column-gap: 10px;
+  row-gap: 20px;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 25px);
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: 996px) {
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-rows: auto;
+  }
+
+  label {
+    display: block;
+    font-size: 19px;
+    font-weight: 500;
+  }
+
+  button {
+    box-sizing: border-box;
+    padding: 0 10px;
+    text-wrap: nowrap;
+
+    @media screen and (min-width: 996px) {
+      width: min-content;
+    }
+  }
+}
+
+#tasks-list,
+#new-task {
+  box-sizing: border-box;
+  max-width: 980px;
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  flex-flow: column;
+  list-style: none;
+  row-gap: 15px;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.task {
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  transform: scale(1);
+  transition-property: transform;
+  transition-duration: 100ms;
+  transition-timing-function: ease-in-out;
+  user-select: none;
+  cursor: pointer;
+  padding: 5px 20px;
+
+  p {
+    margin: 0;
+  }
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  .title {
+    justify-self: start;
+  }
+
+  .date {
+    box-sizing: border-box;
+    text-align: center;
+    color: #000;
+    font-weight: 500;
+    background-color: #ffa500;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 0;
+  }
+
+  input {
+    justify-self: end;
+  }
+
+  &.completed {
+    opacity: 0.8;
+
+    .title {
+      text-decoration: line-through;
+      opacity: 0.9;
+    }
+
+    .date {
+      text-decoration: line-through;
+      opacity: 0.9;
+    }
+
+    input {
+      filter: grayscale(100%);
+    }
+  }
+}
