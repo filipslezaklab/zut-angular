@@ -1,10 +1,10 @@
 <p>Archive</p>
 <ul id="tasks-archive">
   <li *ngFor="let task of tasks">
-    <div class="task">
+    <mat-card class="task">
       <p class="title">Title: {{ task.title }}</p>
       <p class="date" *ngIf="task.deadline">{{ task.deadline | date:'YYYY-MM-dd' }}</p>
-      <button (click)="delete(task, $event)" [disabled]="loading">Delete</button>
-    </div>
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon>
+    </mat-card>
   </li>
 </ul>

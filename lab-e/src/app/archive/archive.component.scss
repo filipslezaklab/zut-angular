@@ -57,9 +57,7 @@ button {
 
 .task {
   height: 50px;
-  background-color: white;
   box-sizing: border-box;
-  border: 1px solid black;
   margin: 0;
   padding: 5px 10px;
   width: 100%;
@@ -73,6 +71,10 @@ button {
   transition-timing-function: ease-in-out;
   user-select: none;
   cursor: pointer;
+
+  p {
+    margin: 0;
+  }
 
   &:hover {
     transform: scale(1.01);

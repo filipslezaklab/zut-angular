@@ -2,18 +2,21 @@
   <form id="new-task" [formGroup]="newTaskForm" (ngSubmit)="handleNewTaskSubmit()">
     <mat-form-field>
       <mat-label>Title</mat-label>
-      <input matInput id="title" />
+      <input matInput id="title" formControlName="title" required />
+      <mat-hint>At least 1 character.</mat-hint>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Deadline</mat-label>
-      <input matInput [matDatepicker]="picker" id="deadline" />
+      <input matInput [matDatepicker]="picker" id="deadline" formControlName="deadline" required />
       <mat-datepicker #picker></mat-datepicker>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-hint>Optional</mat-hint>
     </mat-form-field>
-    <button mat-raised-button color="primary" type="submit" [disabled]="loading">{{ loading ? 'Processing...' : 'Add
+    <button mat-raised-button color="primary" type="submit" [disabled]="loading || !newTaskForm.valid">{{ loading ?
+      'Processing...' : 'Add
       Task'}}</button>
   </form>
-  <button mat-raised-button color="accent" type="button" [disabled]="loading" (click)="archive()">Archive
+  <button mat-raised-button color="accent" type="button" [disabled]="!canArchive()" (click)="archive()">Archive
     completed</button>
 </div>
 <ul id="tasks-list">
