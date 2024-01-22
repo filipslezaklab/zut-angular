@@ -7,7 +7,7 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label>Deadline</mat-label>
-      <input matInput [matDatepicker]="picker" id="deadline" formControlName="deadline" required />
+      <input matInput [matDatepicker]="picker" id="deadline" formControlName="deadline" />
       <mat-datepicker #picker></mat-datepicker>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-hint>Optional</mat-hint>
